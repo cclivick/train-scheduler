@@ -9,9 +9,72 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
     <title>Train Scheduler</title>
 </head>
 <body>
+
+    <header id="mainHead">
+        <h1 id="mainTitle">Train Scheduler</h1>
+        <h5 id="powerBy">Powered by Firebase</h5>
+    </header>
+
+        <div class="container" id="schedCont">
+            <header id="SchedHead">
+                <h6 id="CurrTrainSch">Current Train Schedule</h6>
+            </header>
+                <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr id="train">
+                                <td>Trainy McTrainface</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>Mark</td>
+                            </tr>
+
+                        </tbody>
+                </table>
+        </div>
+
+        <div class="container" id="addCont">
+            <header id="addHead">
+                    <h6 id="addTrain">Add Train</h6>
+            </header>
+                <div class="col-md-12">
+                    <form>
+                            <div class="form-group">
+                                <label for="trainNameInput">Train Name</label>
+                                <input type="text" class="form-control" id="trainNameInput" placeholder="Your Train's Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="destinInput">Destination</label>
+                                <input type="text" class="form-control" id="destinInput" placeholder="Your Train's Destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="timeInput">First Train Time (Military time - HH:mm)</label>
+                                <input type="text" class="form-control" id="timeInput" placeholder="Time of First Departure">
+                            </div>
+                            <div class="form-group">
+                                    <label for="freqInput">Frequency (min)</label>
+                                    <input type="text" class="form-control" id="freqInput" placeholder="Frequency of Departures">
+                            </div>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                    </form>
+                </div>
+
+
+
 
 
 

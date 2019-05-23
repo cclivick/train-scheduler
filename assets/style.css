@@ -1,0 +1,64 @@
+#mainHead{
+    background-image: linear-gradient(rgb(62, 62, 148), rgb(13, 13, 31));
+    height: 150px;
+    margin-bottom: 20px;
+}
+#mainTitle{
+    padding-top: 20px;
+    font-size: 56px;
+    font-family: 'Faster One', cursive;
+}
+h1,
+h5{
+    text-align: center;
+    color: azure;
+}
+#powerBy{
+    font-weight: 300;
+    font-style: italic;
+}
+body{
+    background-image: url(../assets/images/3242515255_b66affe582_b.jpg);
+}
+#SchedHead,
+#addHead{
+    background-image: linear-gradient(rgb(62, 62, 148), rgb(13, 13, 31)); 
+    width: 100%; 
+    height: auto;
+    padding: 10px;
+    border-top-left-radius: 11px; 
+    border-top-right-radius: 11px;
+}
+#addHead{
+    margin-bottom: 10px;
+}
+#CurrTrainSch,
+#addTrain{
+    color: azure;
+    font-size: 20px;
+    font-style: italic;
+
+}
+#schedCont,
+#addCont{
+    border: 2px solid rgb(62, 62, 148);
+    border-radius: 15px;
+    padding: 0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.918);
+}
+label{
+    font-weight: bold;
+}
+#submitBtn{
+    background-image: linear-gradient(rgb(62, 62, 148), rgb(13, 13, 31));
+    font-weight: 700;
+    font-style: italic;
+    border: none;
+    border-radius: 8px;
+}
+#train:hover{
+    background-color: rgb(56, 59, 59);
+    color: white;
+}
