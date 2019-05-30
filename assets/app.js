@@ -45,26 +45,44 @@ $(document).ready(function() {
                 $("#freqInput").val("");
             })
 
-        //Firebase event "child_added" to create 
+        //Firebase event "child_added" to create new train in DOM
         trainData.ref().on("child_added", function(childSnapshot) {
             console.log(childSnapshot.val());
                 var trainName = childSnapshot.val().Name;
                 var trainDest = childSnapshot.val().Destination;
                 var firstDepart = childSnapshot.val().FirstTrain;
                 var frequency = childSnapshot.val().Frequency;
+                
+                //Convert frequency from string to integer
+                var frequency = parseInt(frequency);
 
-                //Calculate next arrival with moment.js
+                
+                var dateConvert = moment(firstDepart, "HH:mm").subtract(1, "years");
+                var trainTime = moment(dateConvert).format("HH:mm");
+
+                var timeConvert = moment(trainTime, "HHmm").subtract(1, "years");
+                var timeDifference = moment().diff(moment(timeConvert), "minutes");
+                
+                var timeRemaining = timeDifference % frequency;
+                
+                var timeAway = frequency - timeRemaining;
+                var nextArrival = moment().add(timeAway, "minutes");
+                var arrivalDisplay = moment(nextArrival).format("HH:mm");
+
+
+
 
                 var newTrainRow = $("<tr>").append(
                     $("<td>").text(trainName),
                     $("<td>").text(trainDest),
                     $("<td>").text(frequency),
-                    $("<td>").text(),
-                    $("<td>").text(),
+                    $("<td>").text(arrivalDisplay),
+                    $("<td>").text(timeAway),
                 )
 
                 $("#trainTable > tbody").append(newTrainRow);
 
         })
+        setInterval("window.location.reload()", 60000);
 
     });
